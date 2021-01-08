@@ -1,0 +1,11 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        y = 0
+        if x < 0 or x >= (2**31)-1 or x<=-2**31:
+            return False
+        else:
+            t = x
+            while t > 0:
+                y = y*10 + t%10
+                t = t//10
+            return x == y

@@ -1,0 +1,12 @@
+class Solution(object):
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        l = 1
+        for x in nums[1:]:
+            if nums[x] not in nums[0:x]:
+                nums[l] = nums[x]
+                l = l+1
+        return l

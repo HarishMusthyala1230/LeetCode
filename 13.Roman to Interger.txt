@@ -1,0 +1,13 @@
+class Solution(object):
+    def romanToInt(self, s):
+        c = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+        r = 0
+        for i in s:
+            r = r + c[i]
+        if "IV" in s or "IX" in s:
+            r  = r - 2
+        if "XL" in s or "XC" in s:
+            r  = r - 20
+        if "CD" in s or "CM" in s:
+            r  = r - 200
+        return r
